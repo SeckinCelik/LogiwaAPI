@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "65c7c089-c860-499f-9b00-aee47e04fd5b",
+		"name": "Logiwa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"AyakkabıAyakkab\",\r\n    \"Description\": \"Ayakkabı\",\r\n    \"StockQuantity\": 100,\r\n    \"Category\": {\r\n        \"Name\": \"Ayakkabı\",\r\n        \"MinimumStockQuantity\": 50\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44304/logiwa/product/add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44304",
+					"path": [
+						"logiwa",
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\":\"ayakkabı\",\r\n    \"StockRange\":[1,100]      \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44304/logiwa/product/filter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44304",
+					"path": [
+						"logiwa",
+						"product",
+						"filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ProductId\":\"73808075-ec2f-4d44-9561-d9a90539d46f\",\r\n    \"Title\":\"Terlik\",\r\n    \"Description\":\"Ayakkabı\",\r\n    \"StockQuantity\":100,\r\n    \"Category\":\r\n    {\r\n        \"Name\":\"Erkek Giyim\",\r\n         \"MinimumStockQuantity\":50   \r\n    }  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44304/logiwa/product/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44304",
+					"path": [
+						"logiwa",
+						"product",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\":\"Ayakkabı\",\r\n    \"Description\":\"Ayakkabı\",\r\n    \"StockQuantity\":100,\r\n    \"Category\":\r\n    {\r\n        \"Name\":\"Erkek Giyim\",\r\n         \"MinimumStockQuantity\":50   \r\n    }  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44304/logiwa/product/getById?productId=2ea2fc0b-113e-4d5e-9540-164b2b24d509",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44304",
+					"path": [
+						"logiwa",
+						"product",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "2ea2fc0b-113e-4d5e-9540-164b2b24d509"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\":\"Ayakkabı\",\r\n    \"Description\":\"Ayakkabı\",\r\n    \"StockQuantity\":100,\r\n    \"Category\":\r\n    {\r\n        \"Name\":\"Erkek Giyim\",\r\n         \"MinimumStockQuantity\":50   \r\n    }  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44304/logiwa/product/getall",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44304",
+					"path": [
+						"logiwa",
+						"product",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
