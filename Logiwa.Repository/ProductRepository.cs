@@ -58,6 +58,7 @@ namespace Logiwa.Repository
             {
                 return null;
             }
+            productList = productList.Where(x => x.StockQuantity >= x.Category.MinimumStockQuantity);
 
             if (!string.IsNullOrEmpty(filter.Name))
             {
@@ -120,7 +121,7 @@ namespace Logiwa.Repository
                 var index = productList.IndexOf(existingItem);
 
                 if (index != -1)
-                    productList[index] = product;                
+                    productList[index] = product;
             }
             else
                 return false;
